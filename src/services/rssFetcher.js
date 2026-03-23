@@ -66,7 +66,7 @@ async function fetchAndScoreNews() {
           )
         )
           score += 3;
-        if (/goal|win|lose|draw|result|injury/i.test(text)) score += 2;
+        if (/goal|win|lose|draw|result|injury/i.test(text)) score += 4;
 
         if (score >= 4) {
           items.push({

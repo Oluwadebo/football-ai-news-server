@@ -32,7 +32,7 @@ app.use(
 app.use(express.json());
 
 // Routes
-app.use("/api/articles", articleRoutes);
+app.use("/api", articleRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api", discoverRoutes); // includes /api/discover-news
 
@@ -44,15 +44,6 @@ mongoose
     console.error("❌ MongoDB failed:", err.message);
     console.error("Full error:", err);process.exit(1);
   });
-
-app.get("/api/articles", async (req, res) => {
-  try {
-    const articles = await Article.find().sort({ createdAt: -1 }).limit(20);
-    res.status(200).json(articles);
-  } catch (err) {
-    res.status(500).json({ error: "Database fetch failed" });
-  }
-});
 
 // Automation schedule (runs every 12 minutes)
 cron.schedule("0 * * * *", async () => {
