@@ -1,5 +1,6 @@
 // server.js
 require("dotenv").config();
+
 const dns = require("dns");
 dns.setServers(["8.8.8.8", "8.8.4.4", "1.1.1.1"]);
 
@@ -8,19 +9,15 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const cron = require("node-cron");
 
-const Article = require("./src/models/Article");
 const articleRoutes = require("./src/routes/articles");
 const adminRoutes = require("./src/routes/admin");
 const discoverRoutes = require("./src/routes/discover");
 const { runAutomationCycle } = require("./src/jobs/automationJob");
 const { getAutomation } = require("./src/config/automationState");
 
-// console.log("runAutomationCycle type:", typeof runAutomationCycle);
-// console.log("runAutomationCycle exists?", !!runAutomationCycle);
-
 const app = express();
 
-// CORS configuration
+// CORS
 app.use(
   cors({
     origin: process.env.FRONTEND_URL || "http://localhost:5173",
@@ -31,24 +28,29 @@ app.use(
 
 app.use(express.json());
 
-// Routes
-app.use("/api", articleRoutes);
+// Routes - Clean & Clear
+app.use("/api/articles", articleRoutes); // ← Best practice: specific mount
 app.use("/api/admin", adminRoutes);
-app.use("/api", discoverRoutes); // includes /api/discover-news
+app.use("/api", discoverRoutes); // discover-news etc.
 
-// MongoDB connection
+// MongoDB Connection with better options
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect(process.env.MONGODB_URI, {
+    serverSelectionTimeoutMS: 30000,
+    socketTimeoutMS: 60000,
+    connectTimeoutMS: 30000,
+    family: 4, // Prefer IPv4
+  })
   .then(() => console.log("✅ MongoDB connected successfully"))
   .catch((err) => {
-    console.error("❌ MongoDB failed:", err.message);
-    console.error("Full error:", err);process.exit(1);
+    console.error("❌ MongoDB connection failed:", err.message);
+    process.exit(1);
   });
 
-// Automation schedule (runs every 12 minutes)
-cron.schedule("0 * * * *", async () => {
+// Automation Schedule (every 12 minutes)
+cron.schedule("*/12 * * * *", async () => {
   if (!getAutomation()) {
-    console.log("Automation is disabled → skipping scheduled cycle");
+    console.log("Automation is disabled → skipping cycle");
     return;
   }
 
@@ -61,7 +63,7 @@ cron.schedule("0 * * * *", async () => {
   }
 });
 
-// Optional: initial run ~8 seconds after server start
+// Initial run after startup
 setTimeout(async () => {
   if (getAutomation()) {
     console.log("Running initial news cycle on server startup...");
@@ -77,8 +79,5 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
   console.log(`Environment: ${process.env.NODE_ENV || "development"}`);
-  console.log(`Automation state: ${getAutomation() ? "ENABLED" : "DISABLED"}`);
+  console.log(`Automation: ${getAutomation() ? "ENABLED" : "DISABLED"}`);
 });
-
-console.log("runAutomationCycle type:", typeof runAutomationCycle);
-console.log("runAutomationCycle exists?", !!runAutomationCycle);

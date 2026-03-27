@@ -1,6 +1,7 @@
-const { fetchAndScoreNews } = require("../services/rssFetcher"); // ← add this line
+// src/jobs/automationJob.js
 const Article = require("../models/Article");
-const PendingNews = require("../models/PendingNews");   // or Pending if that's your model name
+const PendingNews = require("../models/PendingNews");
+const { fetchAndScoreNews } = require("../services/rssFetcher");
 const {
   generateFullArticle,
   generateImagePlaceholder,
@@ -9,14 +10,16 @@ const {
 async function runAutomationCycle() {
   try {
     const rawItems = await fetchAndScoreNews();
-    if (!rawItems || rawItems.length === 0) return;
-// console.log(`Processing ${rawItems.length} raw items from RSS`);
+    if (!rawItems || rawItems.length === 0) {
+      console.log("No new items found in this cycle");
+      return;
+    }
+
+    console.log(`Processing ${rawItems.length} raw items...`);
+
     for (const raw of rawItems) {
       try {
-        // console.log(`Checking article: "${raw.title}" (score: ${raw.score})`);
-        // Inner try/catch: If ONE article fails, the rest continue
         const exists = await Article.findOne({ title: raw.title });
-        // console.log(`Exists? ${!!exists}`);
         if (exists) continue;
 
         const generated = await generateFullArticle(raw);
@@ -31,7 +34,7 @@ async function runAutomationCycle() {
           content: generated.content,
           imageUrl: generateImagePlaceholder(generated.title || raw.title),
           eventType: generated.eventType || "news",
-          tags: generated.tags || [],
+          tags: generated.tags || ["LATEST"],
           score: raw.score || 0,
           source: raw.source || "RSS",
           isTrending: raw.score >= 10,
@@ -39,12 +42,10 @@ async function runAutomationCycle() {
 
         await article.save();
         await PendingNews.deleteOne({ title: raw.title });
-        console.log(`Published: ${article.title}`);
+
+        console.log(`✅ Published: ${article.title}`);
       } catch (innerErr) {
-        console.error(
-          `Skipping article "${raw.title}" due to error:`,
-          innerErr.message,
-        );
+        console.error(`Skipping article "${raw.title}":`, innerErr.message);
       }
     }
   } catch (err) {
@@ -52,5 +53,4 @@ async function runAutomationCycle() {
   }
 }
 
-// at the bottom of automationJob.js
 module.exports = { runAutomationCycle };

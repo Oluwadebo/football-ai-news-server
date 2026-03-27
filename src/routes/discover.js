@@ -8,7 +8,6 @@ router.post("/discover-news", async (req, res) => {
   try {
     const rawItems = await fetchAndScoreNews();
 
-    // Save new discoveries to pending collection (avoid exact duplicates)
     const saved = [];
     for (const item of rawItems) {
       const exists = await PendingNews.findOne({ title: item.title });
@@ -22,11 +21,11 @@ router.post("/discover-news", async (req, res) => {
         discoveredAt: item.pubDate || new Date(),
         status: "discovered",
       });
+
       await pending.save();
       saved.push(pending);
     }
 
-    // Return current pending queue for frontend
     const currentQueue = await PendingNews.find({ status: "discovered" })
       .sort({ discoveredAt: -1 })
       .limit(30);
@@ -43,7 +42,7 @@ router.post("/discover-news", async (req, res) => {
       })),
     );
   } catch (err) {
-    console.error(err);
+    console.error("Discover error:", err);
     res.status(500).json({ error: "Discovery failed" });
   }
 });

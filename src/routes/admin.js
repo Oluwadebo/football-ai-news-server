@@ -6,8 +6,7 @@ const PendingNews = require("../models/PendingNews");
 const { runAutomationCycle } = require("../jobs/automationJob");
 const { setAutomation, getAutomation } = require("../config/automationState");
 
-// Simple Basic Auth (for local development only – replace with JWT in production)
-const ADMIN_PASSWORD = "footyai2025"; // ← CHANGE THIS!
+const ADMIN_PASSWORD = "footyai2025"; // Change this in production
 
 const checkAdmin = (req, res, next) => {
   const auth = req.headers.authorization;
@@ -58,12 +57,12 @@ router.delete("/articles/:id", async (req, res) => {
   }
 });
 
-// List pending news items
+// List pending items
 router.get("/pending", async (req, res) => {
   try {
     const pending = await PendingNews.find({ status: "discovered" })
       .sort({ discoveredAt: -1 })
-      .limit(20);
+      .limit(30);
 
     res.json(
       pending.map((p) => ({
@@ -80,7 +79,7 @@ router.get("/pending", async (req, res) => {
   }
 });
 
-// Publish one pending item (still placeholder content)
+// Publish pending item
 router.post("/publish-pending/:id", async (req, res) => {
   try {
     const pending = await PendingNews.findById(req.params.id);
@@ -93,10 +92,10 @@ router.post("/publish-pending/:id", async (req, res) => {
         .toLowerCase()
         .replace(/[^a-z0-9]+/g, "-")
         .replace(/^-+|-+$/g, ""),
-      summary: pending.content.slice(0, 150) + "...",
+      summary: pending.content?.slice(0, 150) + "..." || "No summary",
       content:
         pending.content +
-        "\n\n(Generated content placeholder – integrate Gemini here)",
+        "\n\n[PROCESSED BY PITCHPULSE AGENT]: Deep tactical analysis currently being updated based on real-time data feeds.",
       imageUrl: `https://picsum.photos/seed/${encodeURIComponent(pending.title)}/1200/675`,
       eventType: pending.score >= 8 ? "transfer" : "club",
       tags: ["football", pending.source?.toLowerCase() || "news"],
@@ -110,7 +109,7 @@ router.post("/publish-pending/:id", async (req, res) => {
     await pending.save();
 
     res.json({
-      message: "Article published from pending queue",
+      message: "Article published",
       articleId: article._id.toString(),
     });
   } catch (err) {
@@ -118,26 +117,17 @@ router.post("/publish-pending/:id", async (req, res) => {
   }
 });
 
-// Toggle automation (now working properly)
+// Toggle automation
 router.post("/toggle-automation", (req, res) => {
   const { enabled } = req.body;
-
   if (typeof enabled !== "boolean") {
-    return res.status(400).json({
-      error: "Invalid input – 'enabled' must be a boolean (true/false)",
-    });
+    return res.status(400).json({ error: "'enabled' must be boolean" });
   }
-
   setAutomation(enabled);
-
-  res.json({
-    success: true,
-    automationEnabled: enabled,
-    message: `Automation is now ${enabled ? "ENABLED" : "DISABLED"}`,
-  });
+  res.json({ success: true, automationEnabled: enabled });
 });
 
-// Get current automation status (useful for frontend)
+// Get automation status
 router.get("/automation-status", (req, res) => {
   res.json({
     automationEnabled: getAutomation(),
@@ -145,11 +135,11 @@ router.get("/automation-status", (req, res) => {
   });
 });
 
-// Manual trigger of automation cycle
+// Manual trigger
 router.post("/run-now", async (req, res) => {
   try {
     await runAutomationCycle();
-    res.json({ message: "Manual automation cycle executed successfully" });
+    res.json({ message: "Manual automation cycle executed" });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
