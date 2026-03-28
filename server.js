@@ -3,6 +3,7 @@ require("dotenv").config();
 
 const dns = require("dns");
 dns.setServers(["8.8.8.8", "8.8.4.4", "1.1.1.1"]);
+dns.setDefaultResultOrder("ipv4first"); 
 
 const express = require("express");
 const cors = require("cors");
@@ -14,6 +15,10 @@ const adminRoutes = require("./src/routes/admin");
 const discoverRoutes = require("./src/routes/discover");
 const { runAutomationCycle } = require("./src/jobs/automationJob");
 const { getAutomation } = require("./src/config/automationState");
+const {
+  syncFootballTargets,
+  getLiveTargets,
+} = require("./src/services/dynamicConfig");
 
 const app = express();
 
@@ -66,6 +71,8 @@ cron.schedule("*/12 * * * *", async () => {
 // Initial run after startup
 setTimeout(async () => {
   if (getAutomation()) {
+    console.log("Syncing football targets...");
+    await syncFootballTargets();
     console.log("Running initial news cycle on server startup...");
     try {
       await runAutomationCycle();

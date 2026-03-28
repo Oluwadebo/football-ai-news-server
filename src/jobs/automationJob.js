@@ -4,18 +4,15 @@ const PendingNews = require("../models/PendingNews");
 const { fetchAndScoreNews } = require("../services/rssFetcher");
 const {
   generateFullArticle,
-  generateImagePlaceholder,
+  generateAndUploadImage,
 } = require("../services/articleGenerator");
+const { getLiveTargets } = require("../services/dynamicConfig");
 
 async function runAutomationCycle() {
   try {
+    const { players, clubs } = await getLiveTargets();
     const rawItems = await fetchAndScoreNews();
-    if (!rawItems || rawItems.length === 0) {
-      console.log("No new items found in this cycle");
-      return;
-    }
-
-    console.log(`Processing ${rawItems.length} raw items...`);
+    if (!rawItems || rawItems.length === 0) return;
 
     for (const raw of rawItems) {
       try {
@@ -23,6 +20,11 @@ async function runAutomationCycle() {
         if (exists) continue;
 
         const generated = await generateFullArticle(raw);
+
+        const imageUrl = await generateAndUploadImage(
+          generated.title || raw.title,
+          generated.eventType,
+        );
 
         const article = new Article({
           title: generated.title || raw.title,
@@ -32,7 +34,7 @@ async function runAutomationCycle() {
             .replace(/^-|-$/g, ""),
           summary: generated.summary,
           content: generated.content,
-          imageUrl: generateImagePlaceholder(generated.title || raw.title),
+          imageUrl,
           eventType: generated.eventType || "news",
           tags: generated.tags || ["LATEST"],
           score: raw.score || 0,
