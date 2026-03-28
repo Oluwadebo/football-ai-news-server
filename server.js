@@ -24,9 +24,27 @@ const standingsRoutes = require("./src/routes/standings");
 const app = express();
 
 // CORS
+if (process.env.NODE_ENV === "production") {
+  const path = require("path");
+  // Serve static files from the React app
+  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
+  });
+}
+
+// app.use(
+//   cors({
+//     origin: process.env.FRONTEND_URL || "http://localhost:5173",
+//     methods: ["GET", "POST", "DELETE", "PATCH"],
+//     credentials: true,
+//   }),
+// );
+
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    origin: process.env.FRONTEND_URL, // Set this to https://your-site.com in Render env vars
     methods: ["GET", "POST", "DELETE", "PATCH"],
     credentials: true,
   }),
