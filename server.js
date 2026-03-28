@@ -9,22 +9,22 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const cron = require("node-cron");
-const path = require("path");
+const rateLimit = require("express-rate-limit");
+const helmet = require("helmet");
 
 const articleRoutes = require("./src/routes/articles");
 const adminRoutes = require("./src/routes/admin");
 const discoverRoutes = require("./src/routes/discover");
 const { runAutomationCycle } = require("./src/jobs/automationJob");
 const { getAutomation } = require("./src/config/automationState");
+const standingsRoutes = require("./src/routes/standings");
 const {
   syncFootballTargets,
   getLiveTargets,
 } = require("./src/services/dynamicConfig");
-const standingsRoutes = require("./src/routes/standings");
 
 const app = express();
 
-const helmet = require("helmet");
 app.use(
   helmet({
     contentSecurityPolicy: {
@@ -38,42 +38,56 @@ app.use(
 
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    origin: [
+      "http://localhost:5173", // Local dev
+      process.env.FRONTEND_URL, // Vercel URL from env
+    ].filter(Boolean),
     methods: ["GET", "POST", "DELETE", "PATCH"],
     credentials: true,
   }),
 );
 app.use(express.json());
 
-const rateLimit = require("express-rate-limit");
-
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 100, // limit each IP to 100 requests per windowMs
   message: "Too many requests from this IP",
 });
-
 app.use("/api/", limiter);
+
 app.use("/api/articles", articleRoutes);
 app.use("/api/standings", standingsRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api", discoverRoutes);
 
 // CORS
-if (process.env.NODE_ENV === "production") {
-  const distPath = path.join(__dirname, "../frontend/dist");
-  app.use(express.static(distPath));
-
-  // FIXED: Express 5.x compatible catch-all route
-  // Must come AFTER API routes and AFTER static files
-  app.get(/.*/, (req, res, next) => {
-    // Skip API routes
-    if (req.path.startsWith("/api")) {
-      return next();
-    }
-    res.sendFile(path.join(distPath, "index.html"));
+app.get("/", (req, res) => {
+  res.json({
+    message: "Football AI News API Server",
+    status: "running",
+    automation: getAutomation() ? "ENABLED" : "DISABLED",
+    endpoints: [
+      "/api/articles",
+      "/api/admin",
+      "/api/standings",
+      "/api/discover-news",
+    ],
   });
-}
+});
+// if (process.env.NODE_ENV === "production") {
+//   const distPath = path.join(__dirname, "../frontend/dist");
+//   app.use(express.static(distPath));
+
+//   // FIXED: Express 5.x compatible catch-all route
+//   // Must come AFTER API routes and AFTER static files
+//   app.get(/.*/, (req, res, next) => {
+//     // Skip API routes
+//     if (req.path.startsWith("/api")) {
+//       return next();
+//     }
+//     res.sendFile(path.join(distPath, "index.html"));
+//   });
+// }
 // app.use(
 //   cors({
 //     origin: process.env.FRONTEND_URL || "http://localhost:5173",
@@ -133,7 +147,7 @@ process.on("SIGTERM", async () => {
   process.exit(0);
 });
 
-cron.schedule("*/50 * * * *", async () => {
+cron.schedule("0 * * * *", async () => {
   if (!getAutomation()) {
     console.log("⏸️ Automation disabled → skipping cycle");
     return;
@@ -166,7 +180,6 @@ setTimeout(async () => {
     }
   }
 }, 8000);
-
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
