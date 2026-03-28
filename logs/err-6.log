@@ -1,0 +1,5 @@
+2026-03-28 12:20:31 +01:00: ❌ Failed to sync dynamic targets: Request failed with status code 429
+2026-03-28 12:21:38 +01:00: ❌ Failed to sync dynamic targets: Request failed with status code 429
+2026-03-28 12:21:49 +01:00: RSS error https://feeds.bbci.co.uk/sport/football/rss.xml: timeout of 10000ms exceeded
+2026-03-28 12:22:51 +01:00: RSS error https://www.theguardian.com/football/rss: Request timed out after 60000ms
+2026-03-28 12:24:06 +01:00: RSS error https://talksport.com/football/feed/: Request timed out after 60000ms

@@ -1,0 +1,101 @@
+2026-03-28 12:12:10 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-03-28 12:12:15 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-03-28 12:12:19 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-03-28 12:12:23 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-03-28 12:12:28 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-03-28 12:12:33 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+2026-03-28 12:12:37 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-03-28 12:12:42 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-03-28 12:12:47 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-03-28 12:12:52 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+2026-03-28 12:12:57 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-03-28 12:13:02 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-03-28 12:13:08 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-03-28 12:13:13 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-03-28 12:13:19 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-03-28 12:13:25 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚡️ secrets for agents: https://dotenvx.com/as2
+2026-03-28 12:13:31 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-03-28 12:13:36 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-03-28 12:13:42 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+2026-03-28 12:13:47 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-03-28 12:13:53 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-03-28 12:13:59 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-03-28 12:14:04 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-03-28 12:14:09 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+2026-03-28 12:14:15 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-03-28 12:14:20 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-03-28 12:14:25 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-03-28 12:14:30 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-03-28 12:14:36 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-03-28 12:14:43 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+2026-03-28 12:14:48 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-03-28 12:14:53 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-03-28 12:14:59 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-03-28 12:15:04 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚡️ secrets for agents: https://dotenvx.com/as2
+2026-03-28 12:15:09 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚡️ secrets for agents: https://dotenvx.com/as2
+2026-03-28 12:15:15 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-03-28 12:15:20 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-03-28 12:15:26 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+2026-03-28 12:15:31 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-03-28 12:15:37 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-03-28 12:15:43 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-03-28 12:15:49 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-03-28 12:15:54 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+2026-03-28 12:16:00 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-03-28 12:16:05 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-03-28 12:16:12 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-03-28 12:16:18 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-03-28 12:16:23 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-03-28 12:16:29 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+2026-03-28 12:16:36 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-03-28 12:16:42 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-03-28 12:16:47 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2026-03-28 12:16:52 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-03-28 12:16:57 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-03-28 12:17:04 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+2026-03-28 12:17:09 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-03-28 12:17:15 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-03-28 12:17:19 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🤖 agentic secret storage: https://dotenvx.com/as2
+2026-03-28 12:17:25 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-03-28 12:17:30 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-03-28 12:17:36 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2026-03-28 12:17:41 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-03-28 12:17:46 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-03-28 12:17:51 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🤖 agentic secret storage: https://dotenvx.com/as2
+2026-03-28 12:17:57 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+2026-03-28 12:18:03 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚡️ secrets for agents: https://dotenvx.com/as2
+2026-03-28 12:18:09 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-03-28 12:18:15 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚡️ secrets for agents: https://dotenvx.com/as2
+2026-03-28 12:18:21 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-03-28 12:18:27 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-03-28 12:18:32 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🤖 agentic secret storage: https://dotenvx.com/as2
+2026-03-28 12:18:38 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-03-28 12:18:43 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🤖 agentic secret storage: https://dotenvx.com/as2
+2026-03-28 12:18:48 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2026-03-28 12:18:54 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-03-28 12:19:00 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2026-03-28 12:19:08 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-03-28 12:19:15 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-03-28 12:19:21 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+2026-03-28 12:19:26 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🤖 agentic secret storage: https://dotenvx.com/as2
+2026-03-28 12:19:31 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+2026-03-28 12:19:37 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: 🤖 agentic secret storage: https://dotenvx.com/as2
+2026-03-28 12:19:42 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-03-28 12:19:50 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚡️ secrets for agents: https://dotenvx.com/as2
+2026-03-28 12:19:57 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+2026-03-28 12:20:02 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-03-28 12:20:09 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  override existing env vars with { override: true }
+2026-03-28 12:20:17 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+2026-03-28 12:20:20 +01:00: 🚀 Server running on http://localhost:5000
+2026-03-28 12:20:20 +01:00: Environment: production
+2026-03-28 12:20:20 +01:00: Automation: ENABLED
+2026-03-28 12:20:28 +01:00: 🔄 Syncing football targets...
+2026-03-28 12:20:31 +01:00: 🚀 Running initial news cycle...
+2026-03-28 12:21:21 +01:00: [dotenv@17.3.1] injecting env (8) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+2026-03-28 12:21:24 +01:00: 🚀 Server running on http://localhost:5000
+2026-03-28 12:21:24 +01:00: Environment: production
+2026-03-28 12:21:24 +01:00: Automation: ENABLED
+2026-03-28 12:21:29 +01:00: ✅ MongoDB connected successfully
+2026-03-28 12:21:32 +01:00: 🔄 Syncing football targets...
+2026-03-28 12:21:35 +01:00: 🔄 Dynamic Football Targets Synced Successfully
+2026-03-28 12:21:35 +01:00: 🚀 Running initial news cycle...
