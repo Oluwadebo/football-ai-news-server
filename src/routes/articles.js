@@ -2,15 +2,6 @@
 const express = require("express");
 const Article = require("../models/Article");
 const router = express.Router();
-const axios = require("axios");
-const LEAGUE_MAP = {
-  "premier league": "PL",
-  "la liga": "PD",
-  bundesliga: "BL1",
-  "serie a": "SA",
-  "ligue 1": "FL1",
-  "champions league": "CL",
-};
 
 // GET /api/articles?page=1&limit=12
 router.get("/", async (req, res) => {
@@ -83,31 +74,6 @@ router.delete("/:id", async (req, res) => {
     res.json({ message: "Article deleted successfully", id: req.params.id });
   } catch (err) {
     res.status(500).json({ error: err.message });
-  }
-});
-
-router.get("/:leagueName", async (req, res) => {
-  try {
-    const code = LEAGUE_MAP[req.params.leagueName.toLowerCase()] || "PL";
-    const response = await axios.get(
-      `https://api.football-data.org/v4/competitions/${code}/standings`,
-      {
-        headers: { "X-Auth-Token": process.env.FOOTBALL_DATA_API_KEY },
-      },
-    );
-
-    const table = response.data.standings[0].table.map((row) => ({
-      pos: row.position,
-      name: row.team.shortName || row.team.name,
-      logo: row.team.crest,
-      p: row.playedGames,
-      gd: row.goalDifference,
-      pts: row.points,
-    }));
-
-    res.json({ league: response.data.competition.name, table });
-  } catch (err) {
-    res.status(500).json({ error: "Failed to fetch live standings" });
   }
 });
 

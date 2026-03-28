@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const dns = require("dns");
 dns.setServers(["8.8.8.8", "8.8.4.4", "1.1.1.1"]);
-dns.setDefaultResultOrder("ipv4first"); 
+dns.setDefaultResultOrder("ipv4first");
 
 const express = require("express");
 const cors = require("cors");
@@ -19,6 +19,7 @@ const {
   syncFootballTargets,
   getLiveTargets,
 } = require("./src/services/dynamicConfig");
+const standingsRoutes = require("./src/routes/standings");
 
 const app = express();
 
@@ -35,6 +36,7 @@ app.use(express.json());
 
 // Routes - Clean & Clear
 app.use("/api/articles", articleRoutes); // ← Best practice: specific mount
+app.use("/api/standings", standingsRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api", discoverRoutes); // discover-news etc.
 
