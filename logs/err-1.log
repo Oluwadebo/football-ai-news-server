@@ -1,1 +1,15 @@
 2026-03-28 12:22:54 +01:00: RSS error https://www.theguardian.com/football/rss: Request timed out after 60000ms
+2026-03-28 13:01:12 +01:00: RSS error https://www.theguardian.com/football/rss: Request timed out after 60000ms
+2026-03-28 13:50:14 +01:00: RSS error https://www.theguardian.com/football/rss: timeout of 10000ms exceeded
+2026-03-28 14:51:04 +01:00: RSS error https://www.theguardian.com/football/rss: Request timed out after 60000ms
+2026-03-28 15:50:33 +01:00: RSS error https://www.espn.com/espn/rss/soccer/news: timeout of 10000ms exceeded
+2026-03-28 15:51:08 +01:00: Gemini generation failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: fetch failed
+2026-03-28 15:51:10 +01:00: ❌ Image generation failed: Request failed with status code 400
+2026-03-28 15:51:22 +01:00: Gemini generation failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: fetch failed
+2026-03-28 15:51:24 +01:00: ❌ Image generation failed: Request failed with status code 400
+2026-03-28 15:51:24 +01:00: Skipping article "Manchester United v Manchester City: Women’s Super League – live": E11000 duplicate key error collection: footyai.articles index: title_1 dup key: { title: "Manchester United v Manchester City: Women’s Super League – live" }
+2026-03-28 16:00:20 +01:00: RSS error https://www.espn.com/espn/rss/soccer/news: timeout of 10000ms exceeded
+2026-03-28 16:50:52 +01:00: RSS error https://www.espn.com/espn/rss/soccer/news: timeout of 10000ms exceeded
+2026-03-28 17:00:26 +01:00: RSS error https://www.espn.com/espn/rss/soccer/news: timeout of 10000ms exceeded
+2026-03-28 17:01:05 +01:00: Gemini generation failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-03-28 17:01:09 +01:00: ❌ Image generation failed: Request failed with status code 400

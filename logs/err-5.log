@@ -1,2 +1,18 @@
 2026-03-28 12:22:41 +01:00: RSS error https://www.theguardian.com/football/rss: Request timed out after 60000ms
 2026-03-28 12:24:06 +01:00: RSS error https://talksport.com/football/feed/: Request timed out after 60000ms
+2026-03-28 13:01:22 +01:00: RSS error https://talksport.com/football/feed/: Request timed out after 60000ms
+2026-03-28 13:51:05 +01:00: RSS error https://www.theguardian.com/football/rss: Request timed out after 60000ms
+2026-03-28 13:51:15 +01:00: RSS error https://www.espn.com/espn/rss/soccer/news: socket hang up
+2026-03-28 14:51:04 +01:00: RSS error https://www.theguardian.com/football/rss: Request timed out after 60000ms
+2026-03-28 15:50:31 +01:00: RSS error https://www.espn.com/espn/rss/soccer/news: timeout of 10000ms exceeded
+2026-03-28 15:51:08 +01:00: Gemini generation failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: fetch failed
+2026-03-28 15:51:11 +01:00: ❌ Image generation failed: Request failed with status code 400
+2026-03-28 15:51:11 +01:00: Skipping article "Paul Pogba scores first goal in more than four years in friendly against Premier League side": E11000 duplicate key error collection: footyai.articles index: title_1 dup key: { title: "Paul Pogba scores first goal in more than four years in friendly against Premier League side" }
+2026-03-28 15:51:22 +01:00: Gemini generation failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: fetch failed
+2026-03-28 15:51:26 +01:00: ❌ Image generation failed: Request failed with status code 400
+2026-03-28 15:51:26 +01:00: Skipping article "Manchester United v Manchester City: Women’s Super League – live": E11000 duplicate key error collection: footyai.articles index: title_1 dup key: { title: "Manchester United v Manchester City: Women’s Super League – live" }
+2026-03-28 16:00:16 +01:00: RSS error https://www.espn.com/espn/rss/soccer/news: timeout of 10000ms exceeded
+2026-03-28 16:50:28 +01:00: RSS error https://www.espn.com/espn/rss/soccer/news: timeout of 10000ms exceeded
+2026-03-28 16:51:05 +01:00: Gemini generation failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-03-28 16:51:07 +01:00: ❌ Image generation failed: Request failed with status code 400
+2026-03-28 17:00:32 +01:00: RSS error https://www.espn.com/espn/rss/soccer/news: timeout of 10000ms exceeded

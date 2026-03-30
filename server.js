@@ -1,5 +1,6 @@
 // server.js
 require("dotenv").config();
+const path = require("path");
 
 const dns = require("dns");
 dns.setServers(["8.8.8.8", "8.8.4.4", "1.1.1.1"]);
@@ -30,11 +31,23 @@ app.use(
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'"],
-        imgSrc: ["'self'", "data:", "https:", "res.cloudinary.com"],
+        // Added images.unsplash.com and general http: for flexibility
+        imgSrc: [
+          "'self'",
+          "data:",
+          "https:",
+          "http:",
+          "res.cloudinary.com",
+          "images.unsplash.com",
+        ],
       },
     },
+    // Add this to prevent cross-origin loading issues
+    crossOriginResourcePolicy: { policy: "cross-origin" },
   }),
 );
+
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use(
   cors({

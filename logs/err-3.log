@@ -1,3 +1,12 @@
 2026-03-28 12:21:38 +01:00: ❌ Failed to sync dynamic targets: Request failed with status code 429
 2026-03-28 12:22:47 +01:00: RSS error https://www.theguardian.com/football/rss: Request timed out after 60000ms
 2026-03-28 12:24:06 +01:00: RSS error https://talksport.com/football/feed/: Request timed out after 60000ms
+2026-03-28 14:50:10 +01:00: RSS error https://feeds.bbci.co.uk/sport/football/rss.xml: timeout of 10000ms exceeded
+2026-03-28 14:51:12 +01:00: RSS error https://www.theguardian.com/football/rss: Request timed out after 60000ms
+2026-03-28 15:50:34 +01:00: RSS error https://www.espn.com/espn/rss/soccer/news: timeout of 10000ms exceeded
+2026-03-28 15:51:22 +01:00: Gemini generation failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: fetch failed
+2026-03-28 15:51:27 +01:00: ❌ Image generation failed: Request failed with status code 400
+2026-03-28 15:51:27 +01:00: Skipping article "Manchester United v Manchester City: Women’s Super League – live": E11000 duplicate key error collection: footyai.articles index: title_1 dup key: { title: "Manchester United v Manchester City: Women’s Super League – live" }
+2026-03-28 16:00:17 +01:00: RSS error https://www.espn.com/espn/rss/soccer/news: timeout of 10000ms exceeded
+2026-03-28 16:50:19 +01:00: RSS error https://www.espn.com/espn/rss/soccer/news: timeout of 10000ms exceeded
+2026-03-28 17:00:37 +01:00: RSS error https://www.espn.com/espn/rss/soccer/news: timeout of 10000ms exceeded

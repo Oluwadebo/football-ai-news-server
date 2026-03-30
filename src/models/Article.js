@@ -6,7 +6,10 @@ const articleSchema = new mongoose.Schema(
     slug: { type: String, required: true, unique: true },
     summary: String,
     content: { type: String, required: true },
-    imageUrl: String,
+    imageUrl: {
+      type: String,
+      default: "https://placehold.co/1200x675/000000/FFFFFF?text=PitchPulse",
+    },
     publishedAt: { type: Date, default: Date.now },
     eventType: {
       type: String,

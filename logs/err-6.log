@@ -3,3 +3,19 @@
 2026-03-28 12:21:49 +01:00: RSS error https://feeds.bbci.co.uk/sport/football/rss.xml: timeout of 10000ms exceeded
 2026-03-28 12:22:51 +01:00: RSS error https://www.theguardian.com/football/rss: Request timed out after 60000ms
 2026-03-28 12:24:06 +01:00: RSS error https://talksport.com/football/feed/: Request timed out after 60000ms
+2026-03-28 13:50:11 +01:00: RSS error https://www.theguardian.com/football/rss: timeout of 10000ms exceeded
+2026-03-28 14:51:04 +01:00: RSS error https://www.theguardian.com/football/rss: Request timed out after 60000ms
+2026-03-28 15:50:22 +01:00: RSS error https://www.espn.com/espn/rss/soccer/news: timeout of 10000ms exceeded
+2026-03-28 15:50:55 +01:00: Gemini generation failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: fetch failed
+2026-03-28 15:50:58 +01:00: ❌ Image generation failed: Request failed with status code 400
+2026-03-28 15:50:58 +01:00: Skipping article "Sean Dyche laughs off speculation he is in talks with ‘brilliant club’ Tottenham": E11000 duplicate key error collection: footyai.articles index: title_1 dup key: { title: "Sean Dyche laughs off speculation he is in talks with ‘brilliant club’ Tottenham" }
+2026-03-28 15:51:08 +01:00: Gemini generation failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: fetch failed
+2026-03-28 15:51:10 +01:00: ❌ Image generation failed: Request failed with status code 400
+2026-03-28 15:51:11 +01:00: Skipping article "Paul Pogba scores first goal in more than four years in friendly against Premier League side": E11000 duplicate key error collection: footyai.articles index: title_1 dup key: { title: "Paul Pogba scores first goal in more than four years in friendly against Premier League side" }
+2026-03-28 15:51:22 +01:00: Gemini generation failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: fetch failed
+2026-03-28 15:51:29 +01:00: ❌ Image generation failed: Request failed with status code 400
+2026-03-28 15:51:29 +01:00: Skipping article "Manchester United v Manchester City: Women’s Super League – live": E11000 duplicate key error collection: footyai.articles index: title_1 dup key: { title: "Manchester United v Manchester City: Women’s Super League – live" }
+2026-03-28 16:00:22 +01:00: RSS error https://www.espn.com/espn/rss/soccer/news: timeout of 10000ms exceeded
+2026-03-28 16:51:08 +01:00: RSS error https://www.theguardian.com/football/rss: Request timed out after 60000ms
+2026-03-28 16:51:18 +01:00: RSS error https://www.espn.com/espn/rss/soccer/news: timeout of 10000ms exceeded
+2026-03-28 17:00:25 +01:00: RSS error https://www.espn.com/espn/rss/soccer/news: timeout of 10000ms exceeded

@@ -21,10 +21,19 @@ async function runAutomationCycle() {
 
         const generated = await generateFullArticle(raw);
 
-        const imageUrl = await generateAndUploadImage(
-          generated.title || raw.title,
-          generated.eventType,
-        );
+       let finalImageUrl;
+       if (
+         raw.imageUrl &&
+         (raw.imageUrl.includes("unsplash.com") ||
+           raw.imageUrl.includes("cloudinary.com"))
+       ) {
+         finalImageUrl = raw.imageUrl;
+       } else {
+         finalImageUrl = await generateAndUploadImage(
+           generated.title || raw.title,
+           generated.eventType,
+         );
+       }
 
         const article = new Article({
           title: generated.title || raw.title,

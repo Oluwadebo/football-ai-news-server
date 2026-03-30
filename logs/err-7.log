@@ -1,3 +1,21 @@
 2026-03-28 12:21:59 +01:00: RSS error https://www.espn.com/espn/rss/soccer/news: timeout of 10000ms exceeded
 2026-03-28 12:23:09 +01:00: RSS error https://talksport.com/football/feed/: Request timed out after 60000ms
 2026-03-28 12:24:41 +01:00: Error: ENOENT: no such file or directory, stat 'C:\Users\Owner\Desktop\work\good\frontend\dist\index.html'
+2026-03-28 13:01:04 +01:00: RSS error https://www.theguardian.com/football/rss: Request timed out after 60000ms
+2026-03-28 13:02:14 +01:00: RSS error https://talksport.com/football/feed/: Request timed out after 60000ms
+2026-03-28 13:51:05 +01:00: RSS error https://www.theguardian.com/football/rss: Request timed out after 60000ms
+2026-03-28 14:01:08 +01:00: RSS error https://www.theguardian.com/football/rss: Request timed out after 60000ms
+2026-03-28 14:51:14 +01:00: RSS error https://www.theguardian.com/football/rss: Request timed out after 60000ms
+2026-03-28 15:50:22 +01:00: RSS error https://www.espn.com/espn/rss/soccer/news: timeout of 10000ms exceeded
+2026-03-28 15:50:56 +01:00: Gemini generation failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: fetch failed
+2026-03-28 15:50:57 +01:00: ❌ Image generation failed: Request failed with status code 400
+2026-03-28 15:50:57 +01:00: Skipping article "Sean Dyche laughs off speculation he is in talks with ‘brilliant club’ Tottenham": E11000 duplicate key error collection: footyai.articles index: title_1 dup key: { title: "Sean Dyche laughs off speculation he is in talks with ‘brilliant club’ Tottenham" }
+2026-03-28 15:51:08 +01:00: Gemini generation failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: fetch failed
+2026-03-28 15:51:10 +01:00: ❌ Image generation failed: Request failed with status code 400
+2026-03-28 15:51:10 +01:00: Skipping article "Paul Pogba scores first goal in more than four years in friendly against Premier League side": E11000 duplicate key error collection: footyai.articles index: title_1 dup key: { title: "Paul Pogba scores first goal in more than four years in friendly against Premier League side" }
+2026-03-28 15:51:22 +01:00: Gemini generation failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: fetch failed
+2026-03-28 15:51:24 +01:00: ❌ Image generation failed: Request failed with status code 400
+2026-03-28 16:00:17 +01:00: RSS error https://www.espn.com/espn/rss/soccer/news: timeout of 10000ms exceeded
+2026-03-28 16:50:46 +01:00: RSS error https://www.espn.com/espn/rss/soccer/news: timeout of 10000ms exceeded
+2026-03-28 17:00:11 +01:00: RSS error https://feeds.bbci.co.uk/sport/football/rss.xml: timeout of 10000ms exceeded
+2026-03-28 17:01:13 +01:00: RSS error https://www.theguardian.com/football/rss: Request timed out after 60000ms
